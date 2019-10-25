@@ -1,17 +1,14 @@
-import { compose } from 'redux';
 import { connect } from 'react-redux';
 
-import User from './User';
+import TodoList from './TodoList';
 
 const mapStateToProps = (state) => ({
-  userDetails: state.user.userDetails
+  items: state.todoList.items
 });
 
 const mapDispatchToProps = {};
 
-export default compose(
-  connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps,
-  ),
-)(User);
+)(TodoList);

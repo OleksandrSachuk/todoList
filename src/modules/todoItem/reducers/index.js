@@ -1,8 +1,5 @@
 const initialState = {
-  todoList: [{
-    id: 1,
-    title: 'Team To-Do List'
-  }],
+  items: [],
 };
 
 export default function (state = initialState, action) {
