@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 
 import AddTodoItem from './AddTodoItem';
-import {addTodoItem} from '../../actions';
+import {addTodoItem, removeTodoItem, changeCheckStatusTodoItem} from '../../actions';
 
 const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = {
-  addTodoItem
+  addTodoItem,
 };
 
 export default connect(

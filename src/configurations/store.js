@@ -2,14 +2,14 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import todoList from '../modules/todoList/reducers';
-import todoItem from '../modules/todoItem/reducers';
+import todoLists from '../modules/todoList/reducers';
+import todoItems from '../modules/todoItem/reducers';
 import user from '../modules/user/reducers';
 
 const rootReducer = combineReducers({
   user,
-  todoList,
-  todoItem,
+  todoLists,
+  todoItems,
 });
 
 const rootEpic = combineEpics();

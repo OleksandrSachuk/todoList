@@ -4,7 +4,11 @@ import AddCircle from '@material-ui/icons/AddCircle';
 
 import styles from './styles';
 
-const AddTodoItem = ({ classes, addTodoItem}) => (
+const AddTodoItem = ({
+                       classes,
+                       addTodoItem,
+
+                     }) => (
     <div onClick={addTodoItem}>
       <AddCircle />
       <span>Add a to-do</span>
