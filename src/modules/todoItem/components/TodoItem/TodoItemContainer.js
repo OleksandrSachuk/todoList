@@ -1,19 +1,15 @@
-import { compose } from 'redux';
 import { connect } from 'react-redux';
 
+import { changeCheckStatusTodoItem, changeTodoItemText, removeTodoItem } from '../../actions';
 import TodoItem from './TodoItem';
-import { changeCheckStatusTodoItem, removeTodoItem } from '../../actions';
-
-const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = {
   removeTodoItem,
-  changeCheckStatusTodoItem
+  changeCheckStatusTodoItem,
+  changeTodoItemText
 };
 
-export default compose(
-  connect(
-    mapStateToProps,
+export default connect(
+    null,
     mapDispatchToProps,
-  ),
 )(TodoItem);

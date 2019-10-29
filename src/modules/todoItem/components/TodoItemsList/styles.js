@@ -1,7 +1,6 @@
-const styles = (theme) => ({
-  active: {
-    textDecoration: 'line-through'
-  }
+const styles = ({
+  todoItemsList: {
+  },
 });
 
 export default styles;

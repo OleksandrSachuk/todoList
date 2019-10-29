@@ -1,16 +1,24 @@
 import React, { PureComponent } from 'react';
-import { TextField, withStyles } from '@material-ui/core';
-
-import styles from './styles';
+import { InputBase } from '@material-ui/core';
 
 class EditableTodoItem extends PureComponent {
-  state={
-    value:''
+  constructor() {
+    super();
+    this.inputRef = React.createRef();
+
+    this.state = {
+      value:''
+    };
+  }
+
+  handleEnter = (event) => {
+    if (event.charCode === 13) {
+      this.inputRef.current.blur();
+    }
   };
 
   render(){
     const {
-      classes,
       item: {id, text},
       onSubmit
     } = this.props;
@@ -22,11 +30,12 @@ class EditableTodoItem extends PureComponent {
         e.preventDefault();
         onSubmit(id,value);
       }}>
-        <TextField
+        <InputBase
           defaultValue={text}
-          margin="normal"
           onChange={(e)=>this.setState({value: e.target.value})}
           onBlur={()=>onSubmit(id,value)}
+          inputRef={this.inputRef}
+          onKeyPress={this.handleEnter}
           autoFocus
         />
       </form>
@@ -36,4 +45,4 @@ class EditableTodoItem extends PureComponent {
 
 EditableTodoItem.propTypes = {};
 
-export default withStyles(styles)(EditableTodoItem);
+export default EditableTodoItem;

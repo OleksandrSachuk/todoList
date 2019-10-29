@@ -8,7 +8,7 @@ export const addTodoItem = () => ({
     todoItem: {
       id: uuid(),
       checked: false,
-      text:'Test'
+      text: ''
     }
   }
 });

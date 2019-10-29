@@ -1,4 +1,3 @@
-import { compose } from 'redux';
 import { connect } from 'react-redux';
 
 import Header from './Header';
@@ -12,11 +11,4 @@ const mapStateToProps = (state) => {
   }
 };
 
-const mapDispatchToProps = {};
-
-export default compose(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps,
-  ),
-)(Header);
+export default connect(mapStateToProps)(Header);

@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 
 import TodoItemsList from './TodoItemsList';
-import { changeCheckStatusTodoItem, removeTodoItem, changeTodoItemText } from '../../actions';
+import { changeCheckStatusTodoItem, changeTodoItemText, removeTodoItem } from '../../actions';
+import { todoItemsSelector } from '../../selectors';
 
 const mapStateToProps = (state) => ({
-  items: state.todoItems.items
+  items: todoItemsSelector(state)
 });
 
 const mapDispatchToProps = {

@@ -1,17 +1,15 @@
-import { compose } from 'redux';
 import { connect } from 'react-redux';
 
 import User from './User';
+import {userDetailsSelector } from '../../selectors';
 
 const mapStateToProps = (state) => ({
-  userDetails: state.user.userDetails
+  userDetails: userDetailsSelector(state)
 });
 
 const mapDispatchToProps = {};
 
-export default compose(
-  connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps,
-  ),
 )(User);

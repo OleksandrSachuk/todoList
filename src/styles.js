@@ -1,10 +1,15 @@
-const styles = (theme) => ({
+const styles = ({
   root: {
-    flexGrow: 1,
+    display: 'flex',
+    flexDirection: 'row',
+    fontSize: 12,
   },
-  paper: {
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
+  leftContainer: {
+    width: '30%',
+    padding: 10
+  },
+  rightContainer: {
+    width: '70%'
   },
 });
 

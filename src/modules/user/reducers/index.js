@@ -1,6 +1,5 @@
 const initialState = {
   userDetails: {
-    img: '',
     firstName: "Oleksandr",
     lastName: 'Sachuk'
   },
