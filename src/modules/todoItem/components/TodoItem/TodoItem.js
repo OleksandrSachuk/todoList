@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 import { withStyles } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 
@@ -17,14 +16,12 @@ const TodoItem = ({ classes, item, changeCheckStatusTodoItem, removeTodoItem, ch
             'aria-label': 'primary checkbox',
           }}
         />
-        <div className={classnames(classes.todoItemText, {
-          [classes.checked]: item.checked
-        })}
+        <div className={classes.todoItemRow}
         >
           <EditableTodoItem
             key={item.id}
             item={item}
-            onSubmit={(id, text)=>changeTodoItemText(id, text)}
+            onSubmit={(id, text) => changeTodoItemText(id, text)}
           />
         </div>
         <DeleteIcon

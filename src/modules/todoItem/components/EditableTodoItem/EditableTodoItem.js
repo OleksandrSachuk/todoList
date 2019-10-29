@@ -1,5 +1,9 @@
 import React, { PureComponent } from 'react';
-import { InputBase } from '@material-ui/core';
+import { InputBase, withStyles } from '@material-ui/core';
+import classnames from 'classnames';
+
+import styles from './styles';
+import PropTypes from 'prop-types';
 
 class EditableTodoItem extends PureComponent {
   constructor() {
@@ -19,7 +23,8 @@ class EditableTodoItem extends PureComponent {
 
   render(){
     const {
-      item: {id, text},
+      classes,
+      item: {id, text, checked},
       onSubmit
     } = this.props;
 
@@ -31,6 +36,9 @@ class EditableTodoItem extends PureComponent {
         onSubmit(id,value);
       }}>
         <InputBase
+          className={classnames(classes.todoItemText, {
+            [classes.checked]: checked
+          })}
           defaultValue={text}
           onChange={(e)=>this.setState({value: e.target.value})}
           onBlur={()=>onSubmit(id,value)}
@@ -43,6 +51,13 @@ class EditableTodoItem extends PureComponent {
   }
 }
 
-EditableTodoItem.propTypes = {};
+EditableTodoItem.propTypes = {
+  classes: PropTypes.object.isRequired,
+  item:  PropTypes.shape({
+    id: PropTypes.string,
+    text: PropTypes.string,
+  }),
+  onSubmit: () => null,
+};
 
-export default EditableTodoItem;
+export default withStyles(styles)(EditableTodoItem);
