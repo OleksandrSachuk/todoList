@@ -1,4 +1,5 @@
 import React from 'react';
+import Grid from '@material-ui/core/Grid';
 
 import User from './modules/user/components/User';
 import TodoList from './modules/todoList/components/TodoList';
@@ -12,15 +13,21 @@ import { withStyles } from '@material-ui/core';
 
 const App = ({classes}) =>  (
   <div className={classes.root}>
-    <div className={classes.leftContainer}>
-      <User />
-      <TodoList/>
-    </div>
-    <div className={classes.rightContainer}>
-      <Header />
-      <TodoItemsList/>
-      <AddTodoItem />
-    </div>
+    <Grid container spacing={0}>
+      <Grid item xs={12} sm={3}>
+        <div className={classes.leftContainer}>
+          <User />
+          <TodoList/>
+        </div>
+      </Grid>
+      <Grid item xs={12} sm={9}>
+        <div className={classes.rightContainer}>
+          <Header />
+          <TodoItemsList/>
+          <AddTodoItem />
+        </div>
+      </Grid>
+    </Grid>
   </div>
   );
 
