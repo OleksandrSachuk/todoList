@@ -24,7 +24,7 @@ class EditableTodoItem extends PureComponent {
   render(){
     const {
       classes,
-      item: {id, text, checked},
+      item: {id, text, checked} = {},
       onSubmit
     } = this.props;
 
